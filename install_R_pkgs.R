@@ -1,3 +1,4 @@
+BiocManager::install("AnVIL")
 AnVIL::install("GenomicSuperSignature", version = "devel")
 devtools::install_github("shbrief/GenomicSuperSignaturePaper")
 devtools::install_github("ebecht/MCPcounter", 
