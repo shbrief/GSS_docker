@@ -23,9 +23,11 @@ mkdir -p Results/E-MTAB-2452/data
 mv E-MTAB-2452_hugene11st_SCANfast_with_GeneSymbol.pcl Results/E-MTAB-2452/data/
 
 ## Download data for TCGA
+mkdir -p Results/TCGA/data/
 gsutil cp gs://genomic_super_signature/TCGA_validationDatasets.rda Results/TCGA/data/
 
 ## Download data for CRC
+mkdir -p Results/CRC/data
 gsutil cp gs://genomic_super_signature/eSets_new.zip Results/CRC/data
 unzip eSets_new.zip
 rm eSets_new.zip
