@@ -3,7 +3,7 @@
 #############################################################
 
 # Set the base image
-FROM bioconductor/bioconductor_docker:devel
+FROM us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor:3.13.2
 
 # File Author / Maintainer
 MAINTAINER Sehyun Oh <shbrief@gmail.com>
