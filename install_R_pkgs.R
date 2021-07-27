@@ -6,7 +6,5 @@ devtools::install_github("ebecht/MCPcounter",
                          subdir = "Source",
                          dependencies = TRUE)
 
-x <- readRDS("pkgs_to_install.rds")
-if (x %in% installed.packages()) {
-    AnVIL::install(x)
-}
+pkgs <- readRDS("pkgs_to_install.rds")
+for (x in pkgs) {if (!x %in% installed.packages()) {AnVIL::install(x)}}
