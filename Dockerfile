@@ -22,4 +22,5 @@ ADD ./pkgs_to_install.rds /tmp/
 RUN chmod 755 /tmp/install_R_pkgs.R
 RUN Rscript /tmp/install_R_pkgs.R
 
+RUN chmod 755 ./startup.sh
 RUN ./startup.sh
