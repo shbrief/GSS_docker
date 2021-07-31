@@ -4,7 +4,7 @@
 
 # Set the base image
 # FROM us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor:3.13.2
-FROM us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor
+FROM us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor:2.0.0
 
 # File Author / Maintainer
 MAINTAINER Sehyun Oh <shbrief@gmail.com>
