@@ -3,15 +3,10 @@
 #############################################################
 
 # Set the base image
-# FROM us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor:3.13.2
 FROM us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor:2.0.0
 
 # File Author / Maintainer
 MAINTAINER Sehyun Oh <shbrief@gmail.com>
-
-# Working directory
-WORKDIR /home/rstudio
-COPY --chown=rstudio:rstudio . /home/rstudio/
 
 # Add the Cloud SDK distribution URI as a package source
 # Import the Google Cloud public key
