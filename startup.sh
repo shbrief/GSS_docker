@@ -1,13 +1,15 @@
 ## Clone GenomicSuperSignaturePaper repository
 git clone https://github.com/shbrief/GenomicSuperSignaturePaper.git
-cd GenomicSuperSignaturePaper
 
 ## Download RAVmodels
 wget https://storage.googleapis.com/genomic_super_signature/RAVmodel_C2.rds
 wget https://storage.googleapis.com/genomic_super_signature/RAVmodel_PLIERpriors.rds
-mv RAVmodel_C2.rds inst/extdata/
-mv RAVmodel_PLIERpriors.rds inst/extdata/
+mv RAVmodel_C2.rds GenomicSuperSignaturePaper/inst/extdata/
+mv RAVmodel_PLIERpriors.rds GenomicSuperSignaturePaper/inst/extdata/
+
+## Build GenomicSuperSignaturePaper package
 R CMD INSTALL --no-multiarch --with-keep.source GenomicSuperSignaturePaper
+cd GenomicSuperSignaturePaper
 
 ## Download data for SLE-WB
 mkdir -p Results/SLE-WB/data
@@ -29,3 +31,8 @@ gsutil cp gs://genomic_super_signature/TCGA_validationDatasets.rda Results/TCGA/
 ## Download data for CRC
 mkdir -p Results/CRC/data
 gsutil cp gs://genomic_super_signature/eSets_new.zip Results/CRC/data/
+unzip Results/CRC/data/eSets_new.zip
+rm Results/CRC/data/eSets_new.zip
+
+# ## Install packages
+# Rscript install_R_pkgs.R
