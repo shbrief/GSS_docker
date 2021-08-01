@@ -12,8 +12,6 @@ MAINTAINER Sehyun Oh <shbrief@gmail.com>
 # Install packages
 ADD ./install_R_pkgs.R /tmp/
 ADD ./pkgs_to_install.rds /tmp/
-RUN chmod 775 /tmp/pkgs_to_install.rds
-RUN chmod 755 /tmp/install_R_pkgs.R
 RUN Rscript /tmp/install_R_pkgs.R
 
 # # Download data
