@@ -8,3 +8,5 @@ devtools::install_github("ebecht/MCPcounter",
 
 pkgs <- readRDS("/tmp/pkgs_to_install.rds")
 for (x in pkgs) {if (!x %in% installed.packages()) {AnVIL::install(x)}}
+
+webshot::install_phantomjs()

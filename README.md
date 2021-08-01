@@ -1,5 +1,4 @@
 ## GenomicSuperSignaturePapaer Docker
-- Docker image to 
-- Built on `bioconductor/bioconductor_docker:devel`
-- Pull this container with the following Docker command: 
-`docker pull quay.io/shbrief/gss_docker`
+
+- Docker image to use in Terra
+- Built on `us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor`

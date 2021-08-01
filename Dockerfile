@@ -1,10 +1,10 @@
 #############################################################
-# Build a GenomicSuperSignaturePaper container
+# Build a GenomicSuperSignaturePaper container for Terra
 #############################################################
 
 # Set the base image
 # Google Cloud SDK is already available in this image
-FROM us.gcr.io/broad-dsp-gcr-public/terra-jupyter-bioconductor:2.0.0
+FROM us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor
 
 # File Author / Maintainer
 MAINTAINER Sehyun Oh <shbrief@gmail.com>
