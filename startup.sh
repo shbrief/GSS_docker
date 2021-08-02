@@ -31,8 +31,8 @@ gsutil cp gs://genomic_super_signature/TCGA_validationDatasets.rda Results/TCGA/
 ## Download data for CRC
 mkdir -p Results/CRC/data
 gsutil cp gs://genomic_super_signature/eSets_new.zip Results/CRC/data/
-unzip Results/CRC/data/eSets_new.zip
+unzip Results/CRC/data/eSets_new.zip -d Results/CRC/data/
 rm Results/CRC/data/eSets_new.zip
 
-# ## Install packages
-# Rscript install_R_pkgs.R
+## Install packages
+Rscript /home/rstudio/install_R_pkgs.R
