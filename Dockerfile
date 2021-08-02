@@ -13,7 +13,10 @@ MAINTAINER Sehyun Oh <shbrief@gmail.com>
 # ADD ./install_R_pkgs.R /tmp/
 # ADD ./pkgs_to_install.rds /tmp/
 # RUN Rscript /tmp/install_R_pkgs.R
+RUN chmod 755 ./startup_pkg_only.sh
+RUN ./startup_pkg_only.sh
 
 # # Download data
 # RUN chmod 755 ./startup.sh
 # RUN ./startup.sh
+ADD ./startup.sh .

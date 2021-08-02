@@ -7,6 +7,9 @@ wget https://storage.googleapis.com/genomic_super_signature/RAVmodel_PLIERpriors
 mv RAVmodel_C2.rds GenomicSuperSignaturePaper/inst/extdata/
 mv RAVmodel_PLIERpriors.rds GenomicSuperSignaturePaper/inst/extdata/
 
+## Install packages
+Rscript /home/rstudio/install_R_pkgs.R
+
 ## Build GenomicSuperSignaturePaper package
 R CMD INSTALL --no-multiarch --with-keep.source GenomicSuperSignaturePaper
 cd GenomicSuperSignaturePaper
@@ -33,6 +36,3 @@ mkdir -p Results/CRC/data
 gsutil cp gs://genomic_super_signature/eSets_new.zip Results/CRC/data/
 unzip Results/CRC/data/eSets_new.zip -d Results/CRC/data/
 rm Results/CRC/data/eSets_new.zip
-
-## Install packages
-Rscript /home/rstudio/install_R_pkgs.R
