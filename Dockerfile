@@ -8,6 +8,11 @@
 # Set the base image
 FROM bioconductor/bioconductor_docker:devel
 
+# File system
+WORKDIR /home/rstudio
+COPY --chown=rstudio:rstudio . /home/rstudio
+RUN chown -R rstudio:rstudio /home
+
 # Add the Cloud SDK distribution URI as a package source
 # Import the Google Cloud public key
 # Update the package list and install the Cloud SDK
