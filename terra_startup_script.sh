@@ -8,7 +8,7 @@ devtools::install_github("ebecht/MCPcounter",
                          subdir = "Source",
                          dependencies = TRUE);
                          
-AnVIL::gsutil_cp("gs://genomic_super_signature/pkgs_to_install.rds", .);
+AnVIL::gsutil_cp("gs://genomic_super_signature/pkgs_to_install.rds", ".");
 pkgs <- readRDS("pkgs_to_install.rds");
 for (x in pkgs) {if (!x %in% installed.packages()) {AnVIL::install(x)}};
 webshot::install_phantomjs()'
