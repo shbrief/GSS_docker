@@ -13,8 +13,11 @@ pkgs <- readRDS("pkgs_to_install.rds");
 for (x in pkgs) {if (!x %in% installed.packages()) {AnVIL::install(x)}};
 webshot::install_phantomjs()'
 
-## Clone GenomicSuperSignaturePaper repository
-git clone https://github.com/shbrief/GenomicSuperSignaturePaper.git
+## Clone GenomicSuperSignaturePaper repository (July 22nd, 2021)
+wget https://github.com/shbrief/GenomicSuperSignaturePaper/archive/f42d5a170b07d66bbb70cbc0ce8698f8a4efe353.zip
+unzip f42d5a170b07d66bbb70cbc0ce8698f8a4efe353.zip
+mv GenomicSuperSignaturePaper-f42d5a170b07d66bbb70cbc0ce8698f8a4efe353 GenomicSuperSignature
+# git clone https://github.com/shbrief/GenomicSuperSignaturePaper.git
 
 ## Download RAVmodels
 wget https://storage.googleapis.com/genomic_super_signature/RAVmodel_C2.rds
