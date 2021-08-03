@@ -16,7 +16,8 @@ RUN chown -R rstudio:rstudio /home
 RUN gsutil cp gs://genomic_super_signature/terra_startup_script.sh .
 RUN chmod 775 terra_startup_script.sh
 RUN ./terra_startup_script.sh
-RUN rm -f -v !("GenomicSuperSignature")
+#RUN rm -f -v !("GenomicSuperSignature")
+RUN rm -f -v ("Dockerfile"|"install_R_pkgs.R"|"README.md"|"startup.sh"|"pkgs_to_install.rds"|"startup_pkg_only.sh"|"terra_startup_script.sh")
 
 USER $USER
 # We want pip to install into the user's dir when the notebook is running.
