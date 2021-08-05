@@ -10,16 +10,16 @@ FROM us.gcr.io/anvil-gcr-public/anvil-rstudio-bioconductor:3.13.2
 WORKDIR /home/rstudio
 COPY --chown=rstudio:rstudio . /home/rstudio
 
-RUN gsutil cp gs://genomic_super_signature/terra_startup_script.sh /home/rstudio
-RUN chmod 775 /home/rstudio/terra_startup_script.sh
-RUN ./home/rstudio/terra_startup_script.sh
+RUN gsutil cp gs://genomic_super_signature/terra_startup_script.sh .
+RUN chmod 775 terra_startup_script.sh
+RUN ./terra_startup_script.sh
 
 # `RUN rm -f -v !("GenomicSuperSignature")` is not working?!
-RUN rm -f /home/rstudio/Dockerfile
-RUN rm -f /home/rstudio/install_R_pkgs.R
-RUN rm -f /home/rstudio/README.md
-RUN rm -f /home/rstudio/pkgs_to_install.rds
-RUN rm -f /home/rstudio/*.sh
+RUN rm -f Dockerfile
+RUN rm -f install_R_pkgs.R
+RUN rm -f README.md
+RUN rm -f pkgs_to_install.rds
+RUN rm -f *.sh
 
 
 USER $USER
