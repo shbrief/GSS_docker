@@ -1,0 +1,39 @@
+name: Build a docker container
+
+on: [push, pull_request]
+
+env:
+  repo-name: shbrief/gss_docker
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Build and push Docker images
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.6.1
+        with:
+          # The two entries below need to be entered as 
+          # github secrets. The "secret" names are "DOCKER_USERNAME"
+          # and "DOCKER_PASSWORD". See https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository
+          # for detailed instructions. 
+          #
+          # DO NOT EDIT THESE ENTRIES HERE. Doing so will 
+          # expose your docker username and password on github.
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          # Use the environment variable on first few lines to set repo name--just centralizes changes
+          repository: ${{ env.repo-name }}
+          tag_with_ref: true
+          tag_with_sha: true
+          tags: latest
+
+
