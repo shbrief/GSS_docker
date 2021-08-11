@@ -1,23 +1,14 @@
-name: Build a docker container
-
 on: [push, pull_request]
 
 env:
-  repo-name: shbrief/terra_gss_docker
+  repo-name: shbrief/gss_docker
 
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  docker:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Build and push Docker images
-      - name: Build and push Docker images
+      - 
+        name: Build and push Docker images
         uses: docker/build-push-action@v2.6.1
         with:
           # The two entries below need to be entered as 
@@ -34,5 +25,3 @@ jobs:
           tag_with_ref: true
           tag_with_sha: true
           tags: latest
-
-
